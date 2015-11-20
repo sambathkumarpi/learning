@@ -7,7 +7,7 @@ a
 b
 >> 15
 
-(tuples) = can't be updated
+(tuples) = cannot be updated
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 [list] = can be updated
@@ -82,5 +82,11 @@ input form keyboard
     
     Enter your expression 10*2  
     The evaluated expression is  20  
+
+oop
+~~~
+__init__ in the constructor of the class
+
+if we print the object after the constructor is created it will call the __str__ and in default it will have the address location
 
 
