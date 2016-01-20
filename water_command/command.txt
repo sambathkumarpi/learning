@@ -1,0 +1,5 @@
+adding the remote in the repo
+==============================
+git remote add <URL-Name> <URL or SSh>
+git remote -vv
+git fetch <URL-Name> <branch_name>
