@@ -1,5 +1,37 @@
-adding the remote in the repo
+/adding the remote in the repo
 ==============================
 git remote add <URL-Name> <URL or SSh>
 git remote -vv
 git fetch <URL-Name> <branch_name>
+git checkout -b <URL-Name> <branch_name>
+git pull <URL-Name> 
+
+restoring the db in odoo
+==============================
+if script is pressent
+
+	/etc/init.d/openerp-server restore db_name db_path
+	give the absalute path not ~relative path
+
+delete the db in odoo
+==============================
+sudo /etc/init.d/odoo-trillium drop (db_name)
+	
+	
+killing the process
+===================
+method:1
+----------
+ps aux | grep <name>
+kill -9 <[pi]-id>
+	-9 immediate terminate
+	-15 proper terminate
+method:2
+-----------
+pkill -f "Process name"
+
+method:3
+-----------
+pkill -f python
+
+	

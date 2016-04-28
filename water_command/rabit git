@@ -1,0 +1,36 @@
+git pull git.sodexis 7.0
+Password for 'https://sf@gitlab.sodexis.com': 
+ ✘ harmony@H-12  /opt/odoo/7.0-CY/cynmar   7.0  git remote -v                                                    
+git.sodexis	https://sf@gitlab.sodexis.com/sciencefirst/cynmar.git (fetch)
+git.sodexis	https://sf@gitlab.sodexis.com/sciencefirst/cynmar.git (push)
+ harmony@H-12  /opt/odoo/7.0-CY/cynmar   7.0  git remote set-url git.sodexis https://sambath@gitlab.sodexis.com
+ harmony@H-12  /opt/odoo/7.0-CY/cynmar   7.0  git remote set-url git.sodexis https://sambath:sambath89@gitlab.sodexis.com/sciencefirst/cynmar.git
+ harmony@H-12  /opt/odoo/7.0-CY/cynmar   7.0  git remote -v                                                                                      
+git.sodexis	https://sambath:sambath89@gitlab.sodexis.com/sciencefirst/cynmar.git (fetch)
+git.sodexis	https://sambath:sambath89@gitlab.sodexis.com/sciencefirst/cynmar.git (push) 
+
+
+-0-------------------------------------------=-------------------=------------------------------
+ sudo su
+[sudo] password for harmony: 
+H-12 rabbitvcs # ls -l
+total 1980
+-rw-r--r-- 1 harmony harmony 1430030 Apr 19 17:59 RabbitVCS.log
+-rw-r--r-- 1 harmony harmony  578943 Apr  5 19:47 RabbitVCS.log.2016-04-05
+-rw-r--r-- 1 harmony harmony     609 Apr 19 11:20 RabbitVCS.log.2016-04-11
+-rw-r--r-- 1 harmony harmony     609 Apr 19 11:20 RabbitVCS.log.2016-04-12
+-rw-r--r-- 1 harmony harmony       0 Apr  4 13:50 settings.conf
+
+
+H-12 rabbitvcs # >RabbitVCS.log
+H-12 rabbitvcs # ls -l
+total 584
+-rw-r--r-- 1 harmony harmony      0 Apr 19 18:05 RabbitVCS.log
+-rw-r--r-- 1 harmony harmony 578943 Apr  5 19:47 RabbitVCS.log.2016-04-05
+-rw-r--r-- 1 harmony harmony    609 Apr 19 11:20 RabbitVCS.log.2016-04-11
+-rw-r--r-- 1 harmony harmony    609 Apr 19 11:20 RabbitVCS.log.2016-04-12
+-rw-r--r-- 1 harmony harmony     68 Apr 19 18:00 repos_paths
+-rw-r--r-- 1 harmony harmony      0 Apr  4 13:50 settings.conf
+
+
+

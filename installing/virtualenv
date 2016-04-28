@@ -1,0 +1,32 @@
+http://www.simononsoftware.com/virtualenv-tutorial/
+
+sudo pip install virtualenv
+
+make the directory in the home for the virtual env
+
+and create the firt virtualenv
+
+	code:
+	=====
+	virtualenv <folder_name>/<env_name>
+	eg: virtualenv virt_env/virt1
+	
+	to activate env:
+	================
+	source <folder_name>/<env_name>/bin/activate
+	eg: source virt_env/virt1/bin/activate
+	
+	to deactivate:
+	==============
+	deactivate
+	
+--------------------------------------------------------------------------------	
+we can see the package in the enviroment by using the two type of package manager
+
+egg and wheel the diffrent type lib packing tool but 'wheel' has pip convention while 'egg' don't have
+
+egg: yolk -l
+wheel: pip frezze
+	
+	
+	  

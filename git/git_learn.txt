@@ -2,3 +2,18 @@ git rebasing
 ------------
 git rebase. Rebasing is the process of moving a branch to a new base commit.
 The general process can be visualized as the following: From a content perspective, rebasing really is just moving a branch from one commit to another.
+
+
+Undo a commit and redo
+
+$ git commit -m "Something terribly misguided"              (1)
+$ git reset --soft HEAD~                                    (2)
+<< edit files as necessary >>                               (3)
+$ git add ...                                               (4)
+$ git commit -c ORIG_HEAD				    (5)
+
+
+to add the deleted file in the commit
+$ git add --all
+
+$ git pull --rebase	

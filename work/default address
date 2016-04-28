@@ -1,0 +1,80 @@
+ID 1101 : Default Shipping and Invoice Address (tiny app)
+
+
+Please make sure that there are no OCA module that does this before starting.
+ 
+If not then let's add a Tiny App.
+Add two fields on contact/customer window:
+Default Shipping Address
+Default Invoice Address
+The default address should be the default when the customer is selected on the SO.
+
+I know we did this before in v7, let's not just copy what we did then, I think it was a little bit messy.
+
+
+I want to avoid having to create a new address fields on the SO.
+
+
+https://github.com/odoomrp/odoomrp-utils/blob/8.0/partner_address_type_default/models/res_partner.py
+
+
+1. people contact
+2. name of the tiny app (default_partner_address_type)
+3. task 
+	. sale l_no 166 onchange_partner_shipping_id
+	. where to place in the create contacts (they do has the selection field as the radio widget)
+	in sale view
+	------------
+		invoice_id = <attribute name="domain">[('type','not in',['delivery'])] </attribute>
+		shipping_id = <attribute name="domain">[('type','not in',['invoice'])] </attribute>
+		
+4. settings->configuration->sale->customer features (allow d and s)
+
+
+		
+	
+	
+	
+ 
+
+
+
+
+
+
+=========================================
+def onchange_partner_id(self, cr, uid, ids, partner_id, context=None):
+       res = super(sale_order_change, self).onchange_partner_id(cr, uid, ids, partner_id, context=context)
+       if partner_id:
+           result=self.pool.get('res.partner').browse(cr, uid,partner_id, context=context)
+
+           res['value']['payment_type']= result.payment_type
+       print res
+       return res  
+       
+       
+ @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        if not self._context.get('default_invoice_addr_id', False):
+            addrs = self.partner_id.address_get(['invoice'])
+            self.invoice_addr_id = addrs.get('invoice', False) and addrs['invoice'] or \
+                addrs.get('default', False) and addrs['default'] or \
+                False
+        if self.journal_id.cc_processing and self.partner_id:
+            self.get_cc_profile()
+        else:
+            self.cim_id = False
+            self.cim_payment_id = False
+            self.new_card = False
+--------------------------------------------------------------------------------------------
+def create(self.valuses);
+
+values == {u'child_ids': [[4, 17, False], [4, 50, False], [4, 48, False], [4, 55, False], [4, 32, False], [4, 22, False], [4, 49, False], [4, 52, False], [4, 51, False], [4, 21, False], [0, False, 
+{u'function': False, u'city': u'Wavre', u'customer': True, u'name': False, u'zip': u'1300', u'title': False, u'mobile': False, u'street2': False, u'country_id': 21, u'comment': False, u'phone': False, u'street': u'69 rue de Namur 55', u'default_address': False, u'supplier': False, u'state_id': False, u'type': u'invoice', u'email': False, u'lang': u'en_US'}]]}
+
+{u'function': False, u'city': u'Wavre', u'customer': True, u'name': False, u'zip': u'1300', u'title': False, u'mobile': False, u'street2': False, u'country_id': 21, u'comment': False, u'phone': False, u'street': u'69 rue de Namur 55', u'default_address': False, 'parent_id': 7, u'supplier': False, u'state_id': False, u'type': u'invoice', u'email': False, u'lang': u'en_US'}
+{'property_supplier_payment_term_id': False, 'credit_limit': 0.0, 'debit_limit': 0.0, 'property_account_payable_id': 15, 'property_account_position_id': False, 'property_account_receivable_id': 7, 'property_product_pricelist': 1, 'last_time_entries_checked': False, 'vat': False, 'property_payment_term_id': 3}
+
+
+
+

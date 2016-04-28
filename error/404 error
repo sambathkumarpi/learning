@@ -1,0 +1,57 @@
+2016-02-02 12:06:18,429 29568 INFO ? openerp.http: Generating nondb routing
+2016-02-02 12:06:18,435 29568 ERROR ? openerp.http: Exception during JSON request handling.
+Traceback (most recent call last):
+  File "/opt/odoo/v9.0/v9.0_community/openerp/http.py", line 643, in _handle_exception
+    return super(JsonRequest, self)._handle_exception(exception)
+  File "/opt/odoo/v9.0/v9.0_community/openerp/http.py", line 1624, in _dispatch_nodb
+    func, arguments = self.nodb_routing_map.bind_to_environ(request.httprequest.environ).match()
+  File "/home/harmony-13/virtualenv/v9/local/lib/python2.7/site-packages/werkzeug/routing.py", line 1430, in match
+    raise NotFound()
+NotFound: 404: Not Found
+2016-02-02 12:06:18,438 29568 INFO ? werkzeug: 127.0.0.1 - - [02/Feb/2016 12:06:18] "POST /longpolling/poll HTTP/1.1" 200 -
+
+by google
+------------
+The HTTP 404 Not Found Error means that 
+	the webpage you were trying to reach could not be found on the server.
+	It is a Client-side Error which means that either the page has been removed or moved and 
+	the URL was not changed accordingly, or that you typed in the URL incorrectly
+
+Now let’s get to solving the 404 Not FoundError.
+------------------------------------------------
+Deleted Pages - If you have deleted pages on your store, be aware that Search Engines may have already crawled and indexed the page. It can take some time (up to a month) for search engines to recognize that the page has been deleted. Your customers also may have bookmarked the page as well. It is a good idea to redirect your deleted products to a different page, like your homepage.
+
+Permissions - If you are getting a 404 Not Found Error along with a sentence that reads “You don’t have permission to access…” Then it’s almost certainly a permissions problem. You should tweak your CHMOD permissions via FTP, or call your hosting provider to have this changed. Usually a good permission set would be 755 for directories and 644 for files. However, permissions vary by host, so be sure to check with them first.
+
+Memory Limit - You might receive a 404 Not Found error as a page that shows up because of a memory_limit issue with your host. Although the two are not directly related, it’s important to learn how to turn on Error Reporting. Turn Error reporting on and then reload the page with the 404 error, if you see an error that starts with “Fatal error: Out of memory” . Then contact your host to increase your memory limit.
+
+.htaccess Problems - The .htaccess is a configuration file used by Apache web-servers on your root folder that can, among other things, control redirects, protect folders, and change aspects of your URL’s. Many times you can solve 404 issues by regenerating this file. You can delete the .htaccess file manually through your FTP and regenerate it by heading over to your Back-Office/Advance Parameters/Performance. Sometimes, simply toggling the option for Friendly URL can do the trick by forcing the regeneration of the .htaccess file.
+
+SSL Certificate Incorrectly Configured - If you can receive a 404 Not Found error after your install your SSL certificate then your SSL Certificate is not set up correctly. Double check with your hosting provider to make sure that your SSL URL is pointing and connecting with the correct PrestaShop URL within the .htaccess file. In PrestaShop 1.5.6 + you have the option to Force SSL on all pages; in that case you need to confirm that any page with content located within an iframe is called in https.
+
+mod_rewrite is disabled - mod_rewrite is an apache module that allows you to customize your URL’s (That is what Friendly URL is). If you receive a 404 error when you turn on Friendly URL, chances are you do not have mod_rewrite enabled on your server. If your Friendly URL is working but in your Back-Office/Advance Parameters/Performance you see a warning that says “No URL rewriting (mod_rewrite) is not active on your server, or it is not possible to check your server configuration.” Then the problem is not due to mod_rewrite. Some hosting servers have security features that do not allow PrestaShop to check your server configuration. If Friendly URL works, then mod_rewrite is installed correctly.
+
+Incorrect Custom URL Route - If you received the 404 error after you created a Custom URL route for your pages in your Back Office/Preferences/SEO & URLs , (Must have Friendly URL active and enabled). There is a strong chance that your custom route was not inputted correctly.
+
+
+Simple Steps to Solve
+----------------------
+There are some simple tips you can try to solve this problem from your end. We will go over some advance troubleshooting tips later. In any case, you should try these tips first because many times, the 404 Not Found Error can be solved rather quickly.
+
+Refresh page - The first thing you should do is simply refresh. You can press Ctrl+F5 to force a refresh on the page. The error may appear just because the page wouldn’t load.
+
+Clear browser’s cache and cookies - If you are able to visit the page from another device, such as your phone, clearing the cache and cookies will usually solve the problem.
+
+Check the URL - Make sure that the URL inputted correctly. This includes spelling of the URL, correct slashes, file extension of the page and so forth.
+
+Scan for Malware – There are some malware files that will force a 404 Error on websites. It’s imperative to make sure your computer is clean and not compromised.
+
+Contact the Webmaster - Go ahead and send a message to the webmaster and let them know of the 404 error. If you are the website owner then contact your hosting provider for more information. If the server is 			encountering problems, it may return 404 errors.
+
+
+
+https://github.com/odoo/odoo/issues/1135
+
+https://github.com/odoo/odoo/issues/1333
+
+
