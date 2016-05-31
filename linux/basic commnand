@@ -1,0 +1,5 @@
+copy the old file to new file name
+--------------------------------
+
+cp -rf 8.0-TR/ ./8.0-SOD
+	old       new

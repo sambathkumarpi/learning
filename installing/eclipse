@@ -1,0 +1,11 @@
+
+delete the workspace in the startup dialog box
+==============================================
+
+Click on the menu Window > Preferences and go to Workspaces like below :
+
+| General
+    | Startup and Shutdown
+        | Workspaces
+
+Select the workspace to delete and click on the Remove button.

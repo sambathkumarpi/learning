@@ -1,0 +1,16 @@
+  442  cd community_modules
+  443  git clone https://github.com/OCA/maintainer-tools.git
+  444  cd maintainer-tools
+  445  ls
+  446  source ~/virt/MM/bin/activate
+  447  pip install -r requirements.txt
+  448  ls
+  462  python setup.py install
+  463  cd ../../
+  464  ls
+  465  cd sodexis_modules/
+  466  ls
+  467  autopep8 -v
+  468  source ~/virt/MM/bin/activate
+  469  oca-autopep8 -ri google_cloudprint -a
+  470  oca-autopep8 -ri google_cloudprint -a -a

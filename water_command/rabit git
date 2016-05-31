@@ -34,3 +34,26 @@ total 584
 
 
 
+==================================from ma'm==========================================
+79  nano ~/.config/rabbitvcs/RabbitVCS.log
+ 480* cd /opt/odoo/7.0-SF
+ 481* ls
+ 482* cd sciencefirst/sciencefirst
+ 483* svn upgrade
+ 484* ls -al
+ 485* cd report
+ 486* svn upgrade
+ 487* cd ..
+ 488* cd security && svn upgrade
+ 489* cd ..
+ 490* cd wizard && svn upgrade
+ 491* cd ..
+ 492* ls -l
+ 493  cd .config/rabbitvcs/
+ 494  >RabbitVCS.log
+ 495  la -l
+ 496  tail -f RabbitVCS.log
+Suganthi • 10 mins
+
+
+
